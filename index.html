@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klaviyo Reporting Automation ROI Calculator</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="assets/logo.png" alt="Visualytics Logo" class="logo">
+            </div>
+            <h1>Klaviyo Reporting Automation ROI Calculator</h1>
+            <p class="subtitle">Calculate the financial benefits of automating your Klaviyo reporting</p>
+        </header>
+
+        <main>
+            <div class="calculator-container">
+                <div class="input-section">
+                    <h2>Input Your Data</h2>
+                    <div class="form-group">
+                        <label for="clients">Number of Klaviyo clients/accounts managed</label>
+                        <input type="number" id="clients" min="1" value="1" step="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="hours-per-client">Hours spent weekly per client on Klaviyo reporting</label>
+                        <input type="number" id="hours-per-client" min="0.1" value="0.5" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="hourly-rate">Team's average hourly rate ($)</label>
+                        <input type="number" id="hourly-rate" min="1" value="120" step="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="client-value">Average client LTV/annual value ($)</label>
+                        <input type="number" id="client-value" min="1" value="30000" step="100">
+                    </div>
+                </div>
+
+                <div class="results-section">
+                    <h2>Results</h2>
+                    
+                    <div class="results-group">
+                        <h3>Current Manual Process</h3>
+                        <div class="result-item">
+                            <span class="result-label">Weekly hours spent on reporting:</span>
+                            <span class="result-value" id="weekly-hours">0</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Monthly hours:</span>
+                            <span class="result-value" id="monthly-hours">0</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Annual hours:</span>
+                            <span class="result-value" id="annual-hours">0</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Annual cost of manual reporting:</span>
+                            <span class="result-value" id="annual-cost">$0</span>
+                        </div>
+                    </div>
+
+                    <div class="results-group">
+                        <h3>With Automation (85% Time Reduction)</h3>
+                        <div class="result-item">
+                            <span class="result-label">New weekly hours:</span>
+                            <span class="result-value" id="new-weekly-hours">0</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">New monthly hours:</span>
+                            <span class="result-value" id="new-monthly-hours">0</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">New annual hours:</span>
+                            <span class="result-value" id="new-annual-hours">0</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">New annual cost:</span>
+                            <span class="result-value" id="new-annual-cost">$0</span>
+                        </div>
+                    </div>
+
+                    <div class="results-group">
+                        <h3>Savings & Opportunities</h3>
+                        <div class="result-item">
+                            <span class="result-label">Annual hours saved:</span>
+                            <span class="result-value" id="annual-hours-saved">0</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Annual cost saved:</span>
+                            <span class="result-value" id="annual-cost-saved">$0</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Additional client capacity gained:</span>
+                            <span class="result-value" id="additional-capacity">0</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Potential additional annual revenue:</span>
+                            <span class="result-value" id="additional-revenue">$0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="summary-section">
+                <h2>Total Financial Impact</h2>
+                <div class="summary-container">
+                    <div class="summary-item">
+                        <h3>Annual Cost Savings</h3>
+                        <div class="summary-value" id="summary-cost-saved">$0</div>
+                    </div>
+                    <div class="summary-item">
+                        <h3>Potential Additional Revenue</h3>
+                        <div class="summary-value" id="summary-additional-revenue">$0</div>
+                    </div>
+                    <div class="summary-item total">
+                        <h3>Total Financial Impact</h3>
+                        <div class="summary-value" id="summary-total-impact">$0</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button id="pdf-export" class="btn btn-primary">Export as PDF</button>
+                <button id="email-results" class="btn btn-secondary">Email Results</button>
+                <a href="https://calendly.com/stan-rezen/reporting-consultation" target="_blank" class="btn btn-cta">Book a Call</a>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2025 Visualytics Agency. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="js/calculator.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</body>
+</html>
